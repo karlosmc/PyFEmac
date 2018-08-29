@@ -51,7 +51,7 @@ Partial Class Form1
         '
         'txtNroTicket
         '
-        Me.txtNroTicket.Location = New System.Drawing.Point(192, 103)
+        Me.txtNroTicket.Location = New System.Drawing.Point(192, 161)
         Me.txtNroTicket.Name = "txtNroTicket"
         Me.txtNroTicket.Size = New System.Drawing.Size(129, 20)
         Me.txtNroTicket.TabIndex = 2
