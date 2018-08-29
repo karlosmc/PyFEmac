@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1770DA6E-8D39-4FC2-AF31-61CBEF0447E7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ProyectoFacturaElectronica.My.MyApplication</StartupObject>
+    <RootNamespace>ProyectoFacturaElectronica</RootNamespace>
+    <AssemblyName>ProyectoFacturaElectronica</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ProyectoFacturaElectronica.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ProyectoFacturaElectronica.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EFatura.Invoice.Xsd, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\EFatura.Invoice.Xsd.1.0.0.5\lib\net20\EFatura.Invoice.Xsd.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\..\facturacionelectronicasunat-master\facturacionelectronicasunat-master\Firmado Sunat\packages\DotNetZip.1.9.8\lib\net20\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\PruebaClasesFactelectronica - FAFIOaCTUAL - market\WindowsApplication1\bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\PruebaClasesFactelectronica - FAFIOaCTUAL - market\WindowsApplication1\bin\Debug\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\..\PruebaClasesFactelectronica - FAFIOaCTUAL - market\WindowsApplication1\bin\Debug\itextsharp.xtra.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aplicacion\frmComprobante.Designer.vb">
+      <DependentUpon>frmComprobante.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\frmComprobante.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\frmDatosAdicionales.Designer.vb">
+      <DependentUpon>frmDatosAdicionales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\frmDatosAdicionales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\frmDetalleDocumento.Designer.vb">
+      <DependentUpon>frmDetalleDocumento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\frmDetalleDocumento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\frmDiscrepancias.Designer.vb">
+      <DependentUpon>frmDiscrepancias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\frmDiscrepancias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\frmDocAnticipo.Designer.vb">
+      <DependentUpon>frmDocAnticipo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\frmDocAnticipo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\frmDocumentoRelacionado.Designer.vb">
+      <DependentUpon>frmDocumentoRelacionado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\frmDocumentoRelacionado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Aplicacion\frmEmpresa.Designer.vb">
+      <DependentUpon>frmEmpresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion\frmEmpresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BD\Clases\ClsAnexo.vb" />
+    <Compile Include="BD\Clases\ClsCabeceraDocumento.vb" />
+    <Compile Include="BD\Clases\ClsDatoAdicional.vb" />
+    <Compile Include="BD\Clases\ClsDiscrepanciaDocumento.vb" />
+    <Compile Include="BD\Clases\ClsDocumentoAnticipo.vb" />
+    <Compile Include="BD\Clases\ClsDocumentoBaja.vb" />
+    <Compile Include="BD\Clases\ClsDocumentoDetalle.vb" />
+    <Compile Include="BD\Clases\ClsDocumentoDetalleBaja.vb" />
+    <Compile Include="BD\Clases\ClsDocumentoDetalleResumen.vb" />
+    <Compile Include="BD\Clases\ClsDocumentoRelacionado.vb" />
+    <Compile Include="BD\Clases\ClsDocumentoResumen.vb" />
+    <Compile Include="BD\Clases\ClsEmpresa.vb" />
+    <Compile Include="BD\Clases\ClsErrorsunat.vb" />
+    <Compile Include="BD\Clases\ClsMoneda.vb" />
+    <Compile Include="BD\Clases\ClsParametro.vb" />
+    <Compile Include="BD\Clases\ClsResumenDiario.vb" />
+    <Compile Include="BD\Clases\ClsTipoDatoAdicionales.vb" />
+    <Compile Include="BD\Clases\ClsTipoDiscrepancia.vb" />
+    <Compile Include="BD\Clases\ClsTipoDocumento.vb" />
+    <Compile Include="BD\Clases\ClsTipoDocumentoAnticipos.vb" />
+    <Compile Include="BD\Clases\ClsTipoDocumentoContribuyente.vb" />
+    <Compile Include="BD\Clases\ClsTipoDocumentoRelacionados.vb" />
+    <Compile Include="BD\Clases\ClsTipoImpuestos.vb" />
+    <Compile Include="BD\Clases\ClsTipoOperaciones.vb" />
+    <Compile Include="BD\Clases\ClsTipoPrecio.vb" />
+    <Compile Include="BD\Clases\ClsUbigeo.vb" />
+    <Compile Include="BD\Clases\ClsUnidadMedida.vb" />
+    <Compile Include="BD\clsConeccion.vb" />
+    <Compile Include="BD\clsEncriptacion.vb" />
+    <Compile Include="Business\AnexoNE.vb" />
+    <Compile Include="Business\CabeceraDocumentoNE.vb" />
+    <Compile Include="Business\clsErrorExcepcion.vb" />
+    <Compile Include="Business\clsHelper.vb" />
+    <Compile Include="Business\DatoAdicionalNE.vb" />
+    <Compile Include="Business\DiscrepanciaDocumentoNE.vb" />
+    <Compile Include="Business\DocumentoAnticipoNE.vb" />
+    <Compile Include="Business\DocumentoBajaNE.vb" />
+    <Compile Include="Business\DocumentoDetalleBajaNE.vb" />
+    <Compile Include="Business\DocumentoDetalleNE.vb" />
+    <Compile Include="Business\DocumentoDetalleResumenNE.vb" />
+    <Compile Include="Business\DocumentoRelacionadoNE.vb" />
+    <Compile Include="Business\DocumentoResumenNE.vb" />
+    <Compile Include="Business\EmpresaNE.vb" />
+    <Compile Include="Business\ErrorsunatNE.vb" />
+    <Compile Include="Business\Module1.vb" />
+    <Compile Include="Business\MonedaNE.vb" />
+    <Compile Include="Business\ParametroNE.vb" />
+    <Compile Include="Business\ResumenDiarioNE.vb" />
+    <Compile Include="Business\TipoDatoAdicionalesNE.vb" />
+    <Compile Include="Business\TipoDiscrepanciaNE.vb" />
+    <Compile Include="Business\TipoDocumentoAnticiposNE.vb" />
+    <Compile Include="Business\TipoDocumentoContribuyenteNE.vb" />
+    <Compile Include="Business\TipoDocumentoNE.vb" />
+    <Compile Include="Business\TipoDocumentoRelacionadosNE.vb" />
+    <Compile Include="Business\TipoImpuestosNE.vb" />
+    <Compile Include="Business\TipoOperacionesNE.vb" />
+    <Compile Include="Business\TipoPrecioNE.vb" />
+    <Compile Include="Business\UbigeoNE.vb" />
+    <Compile Include="Business\UnidadMedidaNE.vb" />
+    <Compile Include="ClassFactE\Constantes\Respuesta.vb" />
+    <Compile Include="ClassFactE\Entidades\AccountingSupplierParty.vb" />
+    <Compile Include="ClassFactE\Entidades\AdditionalDocumentReference.vb" />
+    <Compile Include="ClassFactE\Entidades\AdditionalInformation.vb" />
+    <Compile Include="ClassFactE\Entidades\AdditionalMonetaryTotal.vb" />
+    <Compile Include="ClassFactE\Entidades\AdditionalProperty.vb" />
+    <Compile Include="ClassFactE\Entidades\AgentParty.vb" />
+    <Compile Include="ClassFactE\Entidades\AllowanceCharge.vb" />
+    <Compile Include="ClassFactE\Entidades\AlternativeConditionPrice.vb" />
+    <Compile Include="ClassFactE\Entidades\BillingPayment.vb" />
+    <Compile Include="ClassFactE\Entidades\BillingReference.vb" />
+    <Compile Include="ClassFactE\Entidades\Class1.vb" />
+    <Compile Include="ClassFactE\Entidades\Country.vb" />
+    <Compile Include="ClassFactE\Entidades\CreditNote.vb" />
+    <Compile Include="ClassFactE\Entidades\DebitNote.vb" />
+    <Compile Include="ClassFactE\Entidades\DespatchDocumentReference.vb" />
+    <Compile Include="ClassFactE\Entidades\DigitalSignatureAttachament.vb" />
+    <Compile Include="ClassFactE\Entidades\DiscrepancyResponse.vb" />
+    <Compile Include="ClassFactE\Entidades\EspacioNombres.vb" />
+    <Compile Include="ClassFactE\Entidades\ExchangeRate.vb" />
+    <Compile Include="ClassFactE\Entidades\ExtensionContent.vb" />
+    <Compile Include="ClassFactE\Entidades\ExternalReference.vb" />
+    <Compile Include="ClassFactE\Entidades\Invoice.vb" />
+    <Compile Include="ClassFactE\Entidades\InvoiceDocumentReference.vb" />
+    <Compile Include="ClassFactE\Entidades\InvoicedQuantity.vb" />
+    <Compile Include="ClassFactE\Entidades\InvoiceLine.vb" />
+    <Compile Include="ClassFactE\Entidades\Item.vb" />
+    <Compile Include="ClassFactE\Entidades\LegalMonetaryTotal.vb" />
+    <Compile Include="ClassFactE\Entidades\Module1.vb" />
+    <Compile Include="ClassFactE\Entidades\Party.vb" />
+    <Compile Include="ClassFactE\Entidades\PartyIdentificaction.vb" />
+    <Compile Include="ClassFactE\Entidades\PartyIdentificationID.vb" />
+    <Compile Include="ClassFactE\Entidades\PartyLegalEntity.vb" />
+    <Compile Include="ClassFactE\Entidades\PartyName.vb" />
+    <Compile Include="ClassFactE\Entidades\PayableAmount.vb" />
+    <Compile Include="ClassFactE\Entidades\PostalAddress.vb" />
+    <Compile Include="ClassFactE\Entidades\Price.vb" />
+    <Compile Include="ClassFactE\Entidades\PricingReference.vb" />
+    <Compile Include="ClassFactE\Entidades\SignatoriParty.vb" />
+    <Compile Include="ClassFactE\Entidades\SignatureCac.vb" />
+    <Compile Include="ClassFactE\Entidades\SummaryDocuments.vb" />
+    <Compile Include="ClassFactE\Entidades\SunatCosts.vb" />
+    <Compile Include="ClassFactE\Entidades\SunatEmbededDespatchAdvice.vb" />
+    <Compile Include="ClassFactE\Entidades\SunatRoadTransport.vb" />
+    <Compile Include="ClassFactE\Entidades\TaxCategory.vb" />
+    <Compile Include="ClassFactE\Entidades\TaxScheme.vb" />
+    <Compile Include="ClassFactE\Entidades\TaxSubtotal.vb" />
+    <Compile Include="ClassFactE\Entidades\TaxTotal.vb" />
+    <Compile Include="ClassFactE\Entidades\UBLExtension.vb" />
+    <Compile Include="ClassFactE\Entidades\UBLExtensions.vb" />
+    <Compile Include="ClassFactE\Entidades\VoidedDocumentLine.vb" />
+    <Compile Include="ClassFactE\Entidades\VoidedDocuments.vb" />
+    <Compile Include="ClassFactE\GenXml\ComunicacionBaja.vb" />
+    <Compile Include="ClassFactE\GenXml\Contribuyente.vb" />
+    <Compile Include="ClassFactE\GenXml\DatoAdicional.vb" />
+    <Compile Include="ClassFactE\GenXml\DatosGuia.vb" />
+    <Compile Include="ClassFactE\GenXml\DetalleDocumento.vb" />
+    <Compile Include="ClassFactE\GenXml\Discrepancia.vb" />
+    <Compile Include="ClassFactE\GenXml\DocumentoBaja.vb" />
+    <Compile Include="ClassFactE\GenXml\DocumentoElectronico.vb" />
+    <Compile Include="ClassFactE\GenXml\DocumentoRelacionado.vb" />
+    <Compile Include="ClassFactE\GenXml\DocumentoResumen.vb" />
+    <Compile Include="ClassFactE\GenXml\DocumentoResumenDetalle.vb" />
+    <Compile Include="ClassFactE\GenXml\GrupoResumen.vb" />
+    <Compile Include="ClassFactE\GenXml\GrupoResumenNuevo.vb" />
+    <Compile Include="ClassFactE\GenXml\ResumenDiario.vb" />
+    <Compile Include="Consume\ParametrosConexion.vb" />
+    <Compile Include="Consume\ServiceConsume.vb" />
+    <Compile Include="convertir.vb" />
+    <Compile Include="CrearPDF\UtilPDF.vb" />
+    <Compile Include="DocsXml\DocumentoBajaXML.vb" />
+    <Compile Include="DocsXml\FacturaXML.vb" />
+    <Compile Include="DocsXml\NotaCreditoXML.vb" />
+    <Compile Include="DocsXml\NotaDebitoXML.vb" />
+    <Compile Include="DocsXml\ResumenDiarioXML.vb" />
+    <Compile Include="E-Correo\correo.vb" />
+    <Compile Include="Entidades\AnexoEN.vb" />
+    <Compile Include="Entidades\CabeceraDocumentoEN.vb" />
+    <Compile Include="Entidades\DatoAdicionalEN.vb" />
+    <Compile Include="Entidades\DiscrepanciaDocumentoEN.vb" />
+    <Compile Include="Entidades\DocumentoAnticipoEN.vb" />
+    <Compile Include="Entidades\DocumentoBajaEN.vb" />
+    <Compile Include="Entidades\DocumentoDetalleBajaEN.vb" />
+    <Compile Include="Entidades\DocumentoDetalleEN.vb" />
+    <Compile Include="Entidades\DocumentoDetalleResumenEN.vb" />
+    <Compile Include="Entidades\DocumentoRelacionadoEN.vb" />
+    <Compile Include="Entidades\DocumentoResumenEN.vb" />
+    <Compile Include="Entidades\EmpresaEN.vb" />
+    <Compile Include="Entidades\ErrorsunatEN.vb" />
+    <Compile Include="Entidades\MonedaEN.vb" />
+    <Compile Include="Entidades\ParametroEN.vb" />
+    <Compile Include="Entidades\ResumenDiarioEN.vb" />
+    <Compile Include="Entidades\TipoDatoAdicionalesEN.vb" />
+    <Compile Include="Entidades\TipoDiscrepanciaEN.vb" />
+    <Compile Include="Entidades\TipoDocumentoAnticiposEN.vb" />
+    <Compile Include="Entidades\TipoDocumentoContribuyenteEN.vb" />
+    <Compile Include="Entidades\TipoDocumentoEN.vb" />
+    <Compile Include="Entidades\TipoDocumentoRelacionadosEN.vb" />
+    <Compile Include="Entidades\TipoImpuestosEN.vb" />
+    <Compile Include="Entidades\TipoOperacionesEN.vb" />
+    <Compile Include="Entidades\TipoPrecioEN.vb" />
+    <Compile Include="Entidades\UbigeoEN.vb" />
+    <Compile Include="Entidades\UnidadMedidaEN.vb" />
+    <Compile Include="EnviarDocumento\ConsultarTicket.vb" />
+    <Compile Include="EnviarDocumento\EnviarDocumento.vb" />
+    <Compile Include="EnviarDocumento\EnviarDocumentoResumen.vb" />
+    <Compile Include="EnviarDocumento\Request\ConsultaConstanciaRequest.vb" />
+    <Compile Include="EnviarDocumento\Request\ConsultaTicketRequest.vb" />
+    <Compile Include="EnviarDocumento\Response\DocumentoResponse.vb" />
+    <Compile Include="EnviarDocumento\Response\EnviarResumenResponse.vb" />
+    <Compile Include="Firmado\FirmadoRequest.vb" />
+    <Compile Include="Firmado\FirmadoResponse.vb" />
+    <Compile Include="Firmado\Certificador.vb" />
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainClass\GeneraSUNAT.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="EnviarDocumento\Request\EnviarDocumentoRequest.vb" />
+    <Compile Include="EnviarDocumento\Request\EnvioDocumentoComun.vb" />
+    <Compile Include="EnviarDocumento\DocumentoSunat.vb" />
+    <Compile Include="EnviarDocumento\Response\EnviarDocumentoResponse.vb" />
+    <Compile Include="EnviarDocumento\Response\ResponseDocument.vb" />
+    <Compile Include="EnviarDocumento\Response\RespuestaAsincrono.vb" />
+    <Compile Include="EnviarDocumento\Response\RespuestaComun.vb" />
+    <Compile Include="EnviarDocumento\Response\RespuestaComunConArchivo.vb" />
+    <Compile Include="EnviarDocumento\Response\RespuestaSincrono.vb" />
+    <Compile Include="EnviarDocumento\Response\validarxml.vb" />
+    <Compile Include="Serializador\Serializador.vb" />
+    <Compile Include="Service References\Beta1\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aplicacion\frmComprobante.resx">
+      <DependentUpon>frmComprobante.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Aplicacion\frmDatosAdicionales.resx">
+      <DependentUpon>frmDatosAdicionales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Aplicacion\frmDetalleDocumento.resx">
+      <DependentUpon>frmDetalleDocumento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Aplicacion\frmDiscrepancias.resx">
+      <DependentUpon>frmDiscrepancias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Aplicacion\frmDocAnticipo.resx">
+      <DependentUpon>frmDocAnticipo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Aplicacion\frmDocumentoRelacionado.resx">
+      <DependentUpon>frmDocumentoRelacionado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Aplicacion\frmEmpresa.resx">
+      <DependentUpon>frmEmpresa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\Contribuyente.datasource" />
+    <None Include="My Project\DataSources\DatoAdicional.datasource" />
+    <None Include="My Project\DataSources\DetalleDocumento.datasource" />
+    <None Include="My Project\DataSources\Discrepancia.datasource" />
+    <None Include="My Project\DataSources\DocumentoDetalleEN.datasource" />
+    <None Include="My Project\DataSources\DocumentoElectronico.datasource" />
+    <None Include="My Project\DataSources\DocumentoRelacionado.datasource" />
+    <None Include="My Project\DataSources\EmpresaEN.datasource" />
+    <None Include="My Project\DataSources\MonedaEN.datasource" />
+    <None Include="My Project\DataSources\TipoDatoAdicionalesEN.datasource" />
+    <None Include="My Project\DataSources\TipoDiscrepanciaEN.datasource" />
+    <None Include="My Project\DataSources\TipoDocumentoAnticiposEN.datasource" />
+    <None Include="My Project\DataSources\TipoDocumentoContribuyenteEN.datasource" />
+    <None Include="My Project\DataSources\TipoDocumentoEN.datasource" />
+    <None Include="My Project\DataSources\TipoDocumentoRelacionadosEN.datasource" />
+    <None Include="My Project\DataSources\TipoImpuestosEN.datasource" />
+    <None Include="My Project\DataSources\TipoOperacionesEN.datasource" />
+    <None Include="My Project\DataSources\TipoPrecioEN.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Beta1\billService.wsdl" />
+    <None Include="Service References\Beta1\billService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Beta1\billService1.wsdl" />
+    <None Include="Service References\Beta1\ProyectoFacturaElectronica.Beta1.getStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Beta1\ProyectoFacturaElectronica.Beta1.sendBillResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Beta1\ProyectoFacturaElectronica.Beta1.sendPackResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Beta1\ProyectoFacturaElectronica.Beta1.sendSummaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Beta1\ProyectoFacturaElectronica.Beta1.statusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Beta1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Beta1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Beta1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Beta1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
